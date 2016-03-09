@@ -24,7 +24,7 @@ namespace ReactiveTVSource.Views
 
             // Bind the List agains the table view
             // SampleObject is our model and SampleCell the cell
-            ViewModel.WhenAnyValue (vm => vm.Items).BindTo<SampleObject, SampleCell> (tableView, 46);
+            ViewModel.WhenAnyValue (vm => vm.Items).BindTo<SampleObject, SampleCell> (tableView, 46, cell => cell.Initialize());
 
             View = tableView;
             base.ViewDidLoad ();

@@ -27,12 +27,9 @@ namespace ReactiveTVSource.Views
             set { ViewModel = value as SampleObject; }
         }
 
-        public override void WillMoveToSuperview (UIView newsuper)
+        public void Initialize()
         {
-            if (newsuper == null)
-                return;
-
-            this.WhenAnyValue (v => v.ViewModel.Name).BindTo (
+            this.WhenAnyValue(v => v.ViewModel.Name).BindTo(
                 this,
                 v => v.TextLabel.Text);
         }
