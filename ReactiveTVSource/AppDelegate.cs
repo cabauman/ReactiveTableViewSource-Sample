@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using ReactiveTVSource.Views;
 using UIKit;
 
 namespace ReactiveTVSource
@@ -22,6 +23,11 @@ namespace ReactiveTVSource
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
+
+            Window = new UIWindow(UIScreen.MainScreen.Bounds);
+            Window.RootViewController = new CollectionViewController();
+            Window.RootViewController.View.BackgroundColor = UIColor.LightGray;
+            Window.MakeKeyAndVisible();
 
             return true;
         }
